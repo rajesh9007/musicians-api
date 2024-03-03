@@ -40,29 +40,18 @@ const musicianSchema = new mongoose.Schema(
       required: true,
       default: 0,
     },
-    bands: [
-      {
-        name: String,
-        genre: String,
-        yearsActive: Number,
-      },
-    ],
-    albumsRecorded: [
-      {
-        name: String,
-        releaseYear: Number,
-        copiesSold: Number,
-        label: String,
-      },
-    ],
-    concertsPerformed: [
-      {
-        venue: String,
-        location: String,
-        date: Date,
-        attendance: Number,
-      },
-    ],
+    bands: {
+      type: String,
+      required: true,
+    },
+    albumsRecorded: {
+      type: String,
+      required: true,
+    },
+    concertsPerformed: {
+      type: String,
+      required: true,
+    },
   },
   {
     collection: "musicians",
